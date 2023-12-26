@@ -1,9 +1,9 @@
-let timerId; // переменная, которая будет хранить ID таймера
+let timerId;
 
-//
+//solution
 const startButton = document.getElementById('start');
 startButton.addEventListener('click', function () {
-    timerId = setInterval(updateClock, 1000); // запускаем  updateClock() каждую секунду
+    timerId = setInterval(updateClock, 1000);
 });
 
 const stopButton = document.getElementById('stop');
@@ -20,3 +20,5 @@ function updateClock() {
     const seconds = now.getSeconds()
     clock.textContent = hours + ':' + minutes + ':' + seconds;
 }
+
+
