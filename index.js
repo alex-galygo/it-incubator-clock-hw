@@ -1,15 +1,25 @@
+//
+
+
+
+
 let timerId;
 
 //solution
 const startButton = document.getElementById('start');
 startButton.addEventListener('click', function () {
-    timerId = setInterval(updateClock, 1000);
+    if (!timerId) {
+        timerId = setInterval(updateClock, 1000);
+    }
 });
 
 const stopButton = document.getElementById('stop');
 
 stopButton.addEventListener('click', function () {
-    clearInterval(timerId); // останавливаем таймер
+    if (timerId) {
+        clearInterval(timerId);
+        timerId = null;
+    }
 });
 
 function updateClock() {
